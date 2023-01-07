@@ -4,9 +4,7 @@
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "airbnb", 
-        "prettier"
+        "plugin:react/recommended"
     ],
     "overrides": [
     ],
