@@ -79,6 +79,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Eslint 
 - Prettier 
 - Create React App (dont Jest pour tests)
+- Axios
 ### Pourquoi ne pas avoir utilisé
 - Redux
 - Scss
