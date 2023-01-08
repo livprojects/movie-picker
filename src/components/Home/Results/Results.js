@@ -5,8 +5,8 @@ function Results({ data }) {
   return (
     // <DataProvider>
     <span>
-      {data.map((result) => (
-        <span key="result"> {result.name} </span>
+      {data.map((result, index) => (
+        <span key={index}> {result.name} </span>
       ))}
     </span>
     // </DataProvider>

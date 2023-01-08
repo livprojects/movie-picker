@@ -2,30 +2,15 @@ import "./Home.css";
 import Results from "./Results/Results";
 
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import useMoviesData from "../../middlewares/customFetchingHooks";
 
 function Home() {
-  const [dataResult, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const dataResult = useMoviesData();
 
-  const fetchMoviesData = () => {
-    axios
-      .get(
-        `https://${process.env.REACT_APP_API_BASE_URL}/3/discover/tv?api_key=${process.env.REACT_APP_API_ACCESS_KEY}&language=en-US&sort_by=popularity.desc&page=1&timezone=America/New_York&include_null_first_air_dates=false`
-      )
-      .then((response) => {
-        setData(response.data.results);
-        setLoading(false);
-      })
-      .catch((e) => {
-        console.log("Error message", e.message);
-      });
-  };
-
-  // A la création du composant
-  useEffect(() => {
-    fetchMoviesData();
-  }, []);
+  // // A la création du composant
+  // useEffect(() => {
+  //   fetchMoviesData();
+  // }, []);
 
   return (
     // <DataProvider>
