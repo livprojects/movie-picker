@@ -24,7 +24,6 @@ function Home() {
 
   // A la création du composant
   useEffect(() => {
-    console.log("key : ", process.env.REACT_APP_API_BASE_URL);
     fetchMoviesData();
   }, []);
 
