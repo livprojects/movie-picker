@@ -75,6 +75,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Présentation du projet 
 
 ### Comment lancer le projet
+
+### Process
+- Versioning en branches + setup/feature/clean + n° de feature 
+- Push d'une branche + PR vers main
+- Blocage des PR où la branche n'est pas à jour par rapport à main 
+- Vérification des builds (d'abord sans tests puis avec) 
+- Commits + nom des composants en anglais 
+
 ### Outils en plus 
 - Eslint 
 - Prettier 
