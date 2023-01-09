@@ -47,4 +47,4 @@ function useMovieDetails(movieId, language) {
   return movieDetails;
 }
 
-export default { useMoviesData, useMovieDetails };
+export { useMoviesData, useMovieDetails };

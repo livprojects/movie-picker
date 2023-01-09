@@ -1,14 +1,15 @@
 import "./Home.css";
 import Results from "./Results/Results";
 
-import React, { useEffect, useState } from "react";
-import useMoviesData from "../../middlewares/customFetchingHooks";
+import React from "react";
+import PropTypes from "prop-types";
+import { useMoviesData } from "../../middlewares/customFetchingHooks";
 
 function Home() {
-  const [moviesList, setMoviesList] = useState(useMoviesData());
+  const moviesList = useMoviesData();
 
   // A la création du composant
-  useEffect(() => {}, []);
+  //useEffect(() => {}, []);
 
   return (
     // <DataProvider>
