@@ -6,7 +6,8 @@ import PropTypes from "prop-types";
 import { useMoviesData } from "../../middlewares/customFetchingHooks";
 
 function Home() {
-  const moviesList = useMoviesData();
+  const [useLanguage, setLanguage] = useState("en-US");
+  const moviesList = useMoviesData(useLanguage);
 
   // A la création du composant
   //useEffect(() => {}, []);
