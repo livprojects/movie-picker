@@ -5,18 +5,20 @@ import React, { useEffect, useState } from "react";
 import useMoviesData from "../../middlewares/customFetchingHooks";
 
 function Home() {
-  const dataResult = useMoviesData();
+  const [moviesList, setMoviesList] = useState(useMoviesData());
 
-  // // A la création du composant
-  // useEffect(() => {
-  //   fetchMoviesData();
-  // }, []);
+  // A la création du composant
+  useEffect(() => {}, []);
 
   return (
     // <DataProvider>
-    <Results data={dataResult} />
+    <Results moviesList={moviesList} />
     // </DataProvider>
   );
 }
+
+Home.propTypes = {
+  moviesList: PropTypes.array,
+};
 
 export default Home;
