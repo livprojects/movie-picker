@@ -1,13 +1,18 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-function useMoviesData(language) {
+// Genre : https://api.themoviedb.org/3/discover/movie?api_key=92b418e837b833be308bbfb1fb2aca1e&language=en-US&page=1&with_genres=53
+// Popularité : https://api.themoviedb.org/3/movie/top_rated?api_key=92b418e837b833be308bbfb1fb2aca1e&language=en-US&page=1
+// Année : https://api.themoviedb.org/3/discover/movie?api_key=92b418e837b833be308bbfb1fb2aca1e&language=en-US&page=1&year=1994
+// Langue d'origine : https://api.themoviedb.org/3/discover/movie?api_key=92b418e837b833be308bbfb1fb2aca1e&language=en-US&page=1&with_original_language=de
+
+function usePopularMovies(language, query, data) {
   const [dataResult, setData] = useState([]);
 
-  const fetchMoviesData = (language) => {
+  const fetchMoviesData = (language, query, data) => {
     axios
       .get(
-        `https://${process.env.REACT_APP_API_BASE_URL}/3/discover/tv?api_key=${process.env.REACT_APP_API_ACCESS_KEY}&language=${language}&sort_by=popularity.desc&page=1&timezone=America/New_York&include_null_first_air_dates=false`
+        `https://${process.env.REACT_APP_API_BASE_URL}/3/discover/movie?api_key=${process.env.REACT_APP_API_ACCESS_KEY}&language=${language}&page=1&${query}=${data}`
       )
       .then((response) => {
         setData(response.data.results);
@@ -18,8 +23,8 @@ function useMoviesData(language) {
   };
 
   useEffect(() => {
-    fetchMoviesData(language);
-  });
+    fetchMoviesData(language, query, data);
+  }, [language, query, data]);
 
   return dataResult;
 }
@@ -30,7 +35,7 @@ function useMovieDetails(movieId, language) {
   const fetchMovieDetails = (movieId, language) => {
     axios
       .get(
-        `https://${process.env.REACT_APP_API_BASE_URL}/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_ACCESS_KEY}&language=${language}&sort_by=popularity.desc&page=1&timezone=America/New_York&include_null_first_air_dates=false`
+        `https://${process.env.REACT_APP_API_BASE_URL}/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_ACCESS_KEY}&language=${language}`
       )
       .then((response) => {
         setMovieDetails(response.data.results);
@@ -42,9 +47,9 @@ function useMovieDetails(movieId, language) {
 
   useEffect(() => {
     fetchMovieDetails(movieId, language);
-  });
+  }, []);
 
   return movieDetails;
 }
 
-export { useMoviesData, useMovieDetails };
+export { usePopularMovies, useMovieDetails };

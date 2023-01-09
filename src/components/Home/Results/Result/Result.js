@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { useMovieDetails } from "../../middlewares/customFetchingHooks";
+import Others from "./Others/Others";
 
-function Result({ basicData }) {
-
-  
-  const translatedData = useMovieDetails();
+function Result({ basicData, handleLanguage }) {
+  // const translatedData = useMovieDetails();
 
   return (
-    <div>
-      <span>{translatedData.name}</span>
-    </div>
+    <>
+      <Others movieId={basicData.movieId} />
+      {/* Info */}
+      <span>{basicData.title}</span>
+    </>
     // Utiliser translatedData
 
     // Infos de base
@@ -27,6 +27,7 @@ function Result({ basicData }) {
 
 Result.propTypes = {
   basicData: PropTypes.object,
+  handleLanguage: PropTypes.func,
 };
 
 export default Result;

@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useMovieDetails } from "../../middlewares/customFetchingHooks";
 
 function Others({ movieId }) {
   // const [additionalInfo, setAdditionalInfo] = useState();
@@ -12,7 +11,7 @@ function Others({ movieId }) {
 
   return (
     // Alternative titles
-    //
+    // Providers
     // Similar movies (titles)
     <div></div>
   );
@@ -20,6 +19,7 @@ function Others({ movieId }) {
 
 Others.propTypes = {
   additionalInfo: PropTypes.object,
+  movieId: PropTypes.string
 };
 
 export default Others;
