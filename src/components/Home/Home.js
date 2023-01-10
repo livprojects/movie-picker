@@ -1,7 +1,7 @@
 import "./Home.css";
 import Results from "./Results/Results";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { usePopularMovies } from "../../middlewares/customFetchingHooks";
 import Search from "./Search/Search";
@@ -18,10 +18,12 @@ function Home() {
   }
 
   function handleQuery(query) {
+    console.log(query);
     setQuery(query);
   }
 
   function handleData(data) {
+    console.log(data);
     setData(data);
   }
 
@@ -36,7 +38,7 @@ function Home() {
 }
 
 Home.propTypes = {
-  moviesList: PropTypes.array,
+  moviesList: PropTypes.array
 };
 
 export default Home;
