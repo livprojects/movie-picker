@@ -51,16 +51,16 @@ function Result({ basicData }) {
   }
 
   return (
-    <>
+    <div className="result">
+      <div className="result-card"><span>{basicData.title}</span></div>
       <Others
         similarMovies={useSimilarMovies}
         alternativeTitles={useAlternativeTitles}
         handleMoreDetails={handleMoreDetails}
         movieId={basicData.id}
       />
-      {/* Info */}
-      <span>{basicData.title}</span>
-    </>
+      
+    </div>
     // Utiliser translatedData
 
     // Infos de base

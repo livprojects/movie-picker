@@ -1,4 +1,4 @@
-import "./Home.css";
+import "./home.css";
 
 import React, { useState } from "react";
 import { usePopularMovies } from "../../middlewares/customFetchingHooks";
@@ -13,7 +13,6 @@ function Home() {
   const [useData, setData] = useState(1994);
 
   const moviesList = usePopularMovies(useLanguage, useQuery, useData);
-  let additionalDetails;
 
   function handleLanguage(language) {
     setLanguage(language);
@@ -30,17 +29,17 @@ function Home() {
   }
 
 
-
-
   return (
     // Images / Logo
-    <>
+    <div className="home">
+      <div className="baseline"></div>
       <Search handleQuery={handleQuery} handleData={handleData} />
       <Results
         moviesList={moviesList}
-        handleLanguage={handleLanguage}
-      />
-    </>
+        handleLanguage={handleLanguage}/>
+
+    </div>
+    
   );
 }
 
