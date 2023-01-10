@@ -9,6 +9,7 @@ function Results({ moviesList, handleLanguage }) {
     ["fr-FR", "Français"],
     ["de-DE", "Deutsch"],
     ["es-ES", "Español"],
+    ["ja-JA", "Japonais"]
   ];
   return (
     <div className="results">

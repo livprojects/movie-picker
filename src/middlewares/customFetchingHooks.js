@@ -13,7 +13,7 @@ function usePopularMovies(language, query, data) {
         setData(response.data.results);
       })
       .catch((e) => {
-        console.log(
+        console.error(
           "Une erreur est survenue au niveau de la requête de récupération d'une liste de films : ",
           e.message
         );
