@@ -16,6 +16,7 @@ function Results({ moviesList, handleLanguage }) {
           <Result basicData={result} key={result.title} />
         ))}
       </span>
+      <span>Les résultats sont triés par popularité et ordre décroissant.</span>
     </>
   );
 }

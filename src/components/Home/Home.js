@@ -29,7 +29,7 @@ function Home() {
 
 
   return (
-    // Images
+    // Images / Logo
     <>
       <Search handleQuery={handleQuery} handleData={handleData}/>
       <Results moviesList={moviesList} handleLanguage={handleLanguage}/>

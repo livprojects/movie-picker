@@ -25,8 +25,7 @@ function Search({ handleQuery, handleData }) {
 
   return (
     <>
-      <div>Popularité</div>
-      <SearchSelector handleQuery={handleQuery} handleData={handleData} selectorType="genre" />
+=     <SearchSelector handleQuery={handleQuery} handleData={handleData} selectorType="genre" />
       <SearchInput handleQuery={handleQuery} handleData={handleData} selectorType="year"/>
       <SearchSelector handleQuery={handleQuery} handleData={handleData} selectorType="original-language"/>
     </>
