@@ -27,6 +27,4 @@ function usePopularMovies(language, query, data) {
   return dataResult;
 }
 
-
-
 export { usePopularMovies };
