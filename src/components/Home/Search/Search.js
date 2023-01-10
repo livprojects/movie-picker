@@ -2,7 +2,7 @@ import React from "react";
 import SearchInput from "./SearchInput/SearchInput";
 import SearchSelector from "./SearchSelector/SearchSelector";
 import PropTypes from "prop-types";
-import './search.css';
+import "./style.css";
 
 function Search({ handleQuery, handleData }) {
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import "./others.css";
+import "./style.css";
 
 function Others({
   handleMoreDetails,
@@ -23,19 +23,21 @@ function Others({
 
   return (
     <div className="others">
-      <button className="others-button" onClick={handleOnClick}>Plus de détails</button>
+      <button className="others-button" onClick={handleOnClick}>
+        Plus de détails
+      </button>
       <div className="others-block">
         {useToggle && (
           <div className="others-map-element">
             <div id="others-alt-titles">Titres alternatifs : </div>
             {areTitles &&
               alternativeTitles.map((elem, index) => {
-                return index >= alternativeTitles.length-1 ? (
+                return index >= alternativeTitles.length - 1 ? (
                   <span key={elem}>{elem}</span>
                 ) : (
                   <>
-                   <span key={elem}>{elem}</span>
-                    <span> - </span> 
+                    <span key={elem}>{elem}</span>
+                    <span> - </span>
                   </>
                 );
               })}
@@ -48,7 +50,7 @@ function Others({
             <div id="others-similar-movies">Films similaires :</div>
             {areMovies &&
               similarMovies.map((elem, index) => {
-                return  index >= alternativeTitles.length-1 ? (
+                return index >= alternativeTitles.length - 1 ? (
                   <span key={elem}>{elem}</span>
                 ) : (
                   <>

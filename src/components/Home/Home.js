@@ -1,11 +1,10 @@
-
 import React, { useState } from "react";
 import { usePopularMovies } from "../../middlewares/customFetchingHooks";
 
 import Search from "./Search/Search";
 import Results from "./Results/Results";
 
-import "./home.css";
+import './style.css';
 
 function Home() {
   const [useLanguage, setLanguage] = useState("en-US");
@@ -39,7 +38,9 @@ function Home() {
           <div className="bold-title">Canal</div>
         </div>
         <div className="header-title">
-          <span>Quel film voulez-<div className="handwriting">vous</div> regarder ?</span>
+          <span>
+            Quel film voulez-<div className="handwriting">vous</div> regarder ?
+          </span>
         </div>
       </div>
       <Search handleQuery={handleQuery} handleData={handleData} />

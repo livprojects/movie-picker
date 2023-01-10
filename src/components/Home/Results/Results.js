@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Result from "./Result/Result";
-import "./results.css";
+import "./style.css";
 
 function Results({ moviesList, handleLanguage }) {
   const languages = [
