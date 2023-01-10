@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Result from "./Result/Result";
 
-function Results({ moviesList, handleLanguage }) {
+function Results({ moviesList, handleLanguage, handleMoreDetails, additionalDetails }) {
   return (
     <>
       <span>
@@ -13,7 +13,7 @@ function Results({ moviesList, handleLanguage }) {
           <button onClick={() => handleLanguage("es-ES")}>Español</button>
         </div>
         {moviesList.map((result, index) => (
-          <Result basicData={result} key={result.title} />
+          <Result basicData={result} key={result.title} handleMoreDetails={handleMoreDetails} additionalDetails={additionalDetails} />
         ))}
       </span>
       <span>Les résultats sont triés par popularité et ordre décroissant.</span>
@@ -24,6 +24,8 @@ function Results({ moviesList, handleLanguage }) {
 Results.propTypes = {
   moviesList: PropTypes.array,
   handleLanguage: PropTypes.func,
+  additionalDetails: PropTypes.object, 
+  handleMoreDetails: PropTypes.func
 };
 
 export default Results;

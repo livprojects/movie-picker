@@ -2,12 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import Others from "./Others/Others";
 
-function Result({ basicData, handleLanguage }) {
+function Result({ basicData, handleMoreDetails, additionalDetails }) {
   // const translatedData = useMovieDetails();
 
   return (
     <>
-      <Others movieId={basicData.movieId} />
+      <Others
+        additionalDetails={additionalDetails}
+        handleMoreDetails={handleMoreDetails}
+        movieId={basicData.id}
+      />
       {/* Info */}
       <span>{basicData.title}</span>
     </>
@@ -28,6 +32,8 @@ function Result({ basicData, handleLanguage }) {
 Result.propTypes = {
   basicData: PropTypes.object,
   handleLanguage: PropTypes.func,
+  handleMoreDetails: PropTypes.func,
+  additionalDetails: PropTypes.object
 };
 
 export default Result;

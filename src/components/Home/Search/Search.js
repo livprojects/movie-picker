@@ -22,12 +22,23 @@ import SearchSelector from "./SearchSelector/SearchSelector";
 import PropTypes from "prop-types";
 
 function Search({ handleQuery, handleData }) {
-
   return (
     <>
-=     <SearchSelector handleQuery={handleQuery} handleData={handleData} selectorType="genre" />
-      <SearchInput handleQuery={handleQuery} handleData={handleData} selectorType="year"/>
-      <SearchSelector handleQuery={handleQuery} handleData={handleData} selectorType="original-language"/>
+      <SearchSelector
+        handleQuery={handleQuery}
+        handleData={handleData}
+        selectorType="genre"
+      />
+      <SearchInput
+        handleQuery={handleQuery}
+        handleData={handleData}
+        selectorType="year"
+      />
+      <SearchSelector
+        handleQuery={handleQuery}
+        handleData={handleData}
+        selectorType="original-language"
+      />
     </>
   );
 }
