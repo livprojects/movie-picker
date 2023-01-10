@@ -13,11 +13,24 @@ function Results({ moviesList, handleLanguage }) {
   return (
     <div className="results">
       <div className="results-language-bar">
-        {languages.map((language) => (
-          <button key={language[0]} onClick={() => handleLanguage(language[0])}>
-            {language[1]}
-          </button>
-        ))}
+        <div>
+          <span>
+            Affichez les résultats dans <span id="result-handwriting" className="handwriting">
+              votre
+            </span>
+            langue
+          </span>
+        </div>
+        <div className="results-language-bar-buttons">
+          {languages.map((language) => (
+            <button
+              key={language[0]}
+              onClick={() => handleLanguage(language[0])}
+            >
+              {language[1]}
+            </button>
+          ))}
+        </div>
       </div>
       <div className="results-list">
         {moviesList.map((result, index) => (
