@@ -15,7 +15,7 @@ function Results({ moviesList, handleLanguage }) {
       <div className="results-language-bar">
         {languages.map((language) => (
           <button key={language[0]} onClick={() => handleLanguage(language[0])}>
-            language[1]
+            {language[1]}
           </button>
         ))}
       </div>

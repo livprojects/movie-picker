@@ -1,0 +1,33 @@
+.select-bar {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-items: baseline;
+    justify-content: space-evenly;
+    margin: 1rem auto;
+}
+
+.select-bar-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+select {
+    font-family: "Inter", sans-serif;
+    background-color: rgb(123, 123, 123);
+    color: white;
+    border: 0px solid;
+    padding: 0.2rem;
+
+}
+input {
+    font-family: "Inter", sans-serif;
+    background-color: rgb(123, 123, 123);
+    border: 0px solid;
+    padding: 0.2rem;
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}

@@ -20,14 +20,14 @@ function SearchInput({ handleData, handleQuery, selectorType }) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div>
+    <div className="select-bar-item">
       <form onSubmit={handleOnSubmit}>
-        <label htmlFor="input">Quelle année ?</label>
         <input
           id="input"
           name="value-input"
           type="number"
           min="0"
+          placeholder="Année ?"
           max={currentYear + 2}
           onChange={handleOnChange}
         ></input>

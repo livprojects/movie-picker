@@ -1,15 +1,64 @@
+
+
 body {
   background-color: black;
   color: white;
+  width: 100vw;
+  font-family: "Inter", sans-serif;
 }
 
 .home {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  font-size: 1.2rem;
 }
 
-@media (min-width: 88px) {
-  .main {
-    padding: 4rem 0;
-  }
+.header {
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+
+  background-image: url("../../assets/projecteur.jpg");
+  background-position: center;
+  background-size: cover;
+
+  align-items: center;
+  justify-items: center;
+
+}
+
+.header-logo {
+    display: flex;
+    margin: 1rem auto 4rem 1.5rem;
+    font-size: 2rem;
+    padding: 0.5rem;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header-title {
+    display: flex;
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.handwriting {
+  display: inline-block;
+  font-family: "Zeyada", cursive;
+  font-size: 2.5rem; 
+  background-color: black;
+  padding: 0.4rem;
+  transform: rotate(-15deg);
+}
+
+.bold-title {
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  
+  font-weight: 700;
+  color: white;
 }

@@ -41,14 +41,14 @@ function SearchSelector({ handleData, handleQuery, selectorType }) {
 
   if (isGenres) {
     optionsMap = genres;
-    label = "Quel genre ?";
+    label = "Genre ?";
   } else {
     optionsMap = languages;
-    label = "Quelle langue d'origine ?";
+    label = "Langue d'origine ?";
   }
 
   return (
-    <div>
+    <div className="select-bar-item">
       <select onChange={handleOnChange} name="query-selector" id="query-select">
         <option value="">{label}</option>
         {optionsMap.map((option) => (

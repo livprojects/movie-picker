@@ -23,12 +23,17 @@ function Others({
       <button onClick={handleOnClick}>More</button>
       <div className="others-alt-titles">
         <span>Titres alternatifs : </span>
-        {areTitles &&
-          alternativeTitles.map((elem) => <span key={elem}>{elem}</span>)}
+        <div className="others-map-element">
+          {areTitles &&
+            alternativeTitles.map((elem) => <span key={elem}>{elem}</span>)}
+        </div>
       </div>
       <div className="others-similar-movies">
-        {areMovies &&
-          similarMovies.map((elem) => <span key={elem}>{elem}</span>)}
+        <span>Films similaires :</span>
+        <div className="others-map-element">
+          {areMovies &&
+            similarMovies.map((elem) => <span key={elem}>{elem}</span>)}
+        </div>
       </div>
     </div>
   );
