@@ -72,7 +72,7 @@ function Result({ basicData, languages }) {
               <span> 
                 {languages.map((lang) => {
                   if (lang[0].slice(0, 2) === `${basicData.original_language}`) {
-                    return ` ${lang[1]}`;
+                    return <span key={basicData.original_language}>` ${lang[1]}`</span>;
                   }
                 })}
               </span>
