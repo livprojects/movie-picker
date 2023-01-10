@@ -62,3 +62,7 @@ body {
   font-weight: 700;
   color: white;
 }
+
+footer {
+  margin: 1rem auto;
+}
