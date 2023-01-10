@@ -31,3 +31,23 @@ input {
 ::placeholder {
     color: white;
 }
+
+@media (max-width:300px) {
+    .select-bar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem auto;
+    }
+
+    .select-bar-item {
+       margin: 0.2rem;
+    }
+    
+    select, input {
+        text-align: center;
+    }
+  }
+
