@@ -19,7 +19,7 @@ function Result({ basicData, languages }) {
         }
       })
       .catch((e) => {
-        console.log(
+        console.error(
           "Une erreur est survenue au niveau de la requête de récupération des titres alternatifs d'un film : ",
           e.message
         );
@@ -39,7 +39,7 @@ function Result({ basicData, languages }) {
         }
       })
       .catch((e) => {
-        console.log(
+        console.error(
           "Une erreur est survenue au niveau de la requête de récupération des films similaires : ",
           e.message
         );
@@ -68,11 +68,15 @@ function Result({ basicData, languages }) {
             <li>
               <span className="result-card-info-label">
                 Langue d&apos;origine :
-              </span> 
-              <span> 
+              </span>
+              <span>
                 {languages.map((lang) => {
-                  if (lang[0].slice(0, 2) === `${basicData.original_language}`) {
-                    return <span key={basicData.original_language}>` ${lang[1]}`</span>;
+                  if (
+                    lang[0].slice(0, 2) === `${basicData.original_language}`
+                  ) {
+                    return (
+                      <span key={basicData.original_language}> {lang[1]}</span>
+                    );
                   }
                 })}
               </span>

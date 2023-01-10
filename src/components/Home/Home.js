@@ -18,12 +18,10 @@ function Home() {
   }
 
   function handleQuery(query) {
-    console.log(query);
     setQuery(query);
   }
 
   function handleData(data) {
-    console.log(data);
     setData(data);
   }
 
