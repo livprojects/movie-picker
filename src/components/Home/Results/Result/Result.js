@@ -102,8 +102,7 @@ Result.propTypes = {
   basicData: PropTypes.object,
   handleLanguage: PropTypes.func,
   handleMoreDetails: PropTypes.func,
-  additionalDetails: PropTypes.object,
-  languages: PropTypes.array,
+  languages: PropTypes.arrayOf(PropTypes.array),
 };
 
 export default Result;

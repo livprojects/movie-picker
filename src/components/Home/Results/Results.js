@@ -33,7 +33,7 @@ function Results({ moviesList, handleLanguage }) {
         </div>
       </div>
       <div className="results-list">
-        {moviesList.map(result =>{
+        {moviesList.map(result => {
           return result.adult? <></> : <Result basicData={result} key={result.title} languages={languages} />
         } 
           

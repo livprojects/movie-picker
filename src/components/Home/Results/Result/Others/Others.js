@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import "./others.css";
 
 function Others({
   handleMoreDetails,
@@ -7,6 +8,7 @@ function Others({
   similarMovies,
   alternativeTitles,
 }) {
+  const [useToggle, setToggle] = useState(false);
   const isNullUndefinedOrEmpty = (array) => {
     return array === null || array === undefined || array.length > 0;
   };
@@ -15,25 +17,48 @@ function Others({
   const areTitles = isNullUndefinedOrEmpty(alternativeTitles);
 
   const handleOnClick = () => {
+    setToggle(!useToggle);
     handleMoreDetails(movieId);
   };
 
   return (
     <div className="others">
-      <button onClick={handleOnClick}>More</button>
-      <div className="others-alt-titles">
-        <span>Titres alternatifs : </span>
-        <div className="others-map-element">
-          {areTitles &&
-            alternativeTitles.map((elem) => <span key={elem}>{elem}</span>)}
-        </div>
+      <button className="others-button" onClick={handleOnClick}>Plus de détails</button>
+      <div className="others-block">
+        {useToggle && (
+          <div className="others-map-element">
+            <div id="others-alt-titles">Titres alternatifs : </div>
+            {areTitles &&
+              alternativeTitles.map((elem, index) => {
+                return index >= alternativeTitles.length-1 ? (
+                  <span key={elem}>{elem}</span>
+                ) : (
+                  <>
+                   <span key={elem}>{elem}</span>
+                    <span> - </span> 
+                  </>
+                );
+              })}
+          </div>
+        )}
       </div>
-      <div className="others-similar-movies">
-        <span>Films similaires :</span>
-        <div className="others-map-element">
-          {areMovies &&
-            similarMovies.map((elem) => <span key={elem}>{elem}</span>)}
-        </div>
+      <div className="others-block">
+        {useToggle && (
+          <div className="others-map-element">
+            <div id="others-similar-movies">Films similaires :</div>
+            {areMovies &&
+              similarMovies.map((elem, index) => {
+                return  index >= alternativeTitles.length-1 ? (
+                  <span key={elem}>{elem}</span>
+                ) : (
+                  <>
+                    <span key={elem}>{elem}</span>
+                    <span> - </span>
+                  </>
+                );
+              })}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -42,8 +67,8 @@ function Others({
 Others.propTypes = {
   movieId: PropTypes.number,
   handleMoreDetails: PropTypes.func,
-  similarMovies: PropTypes.array,
-  alternativeTitles: PropTypes.array,
+  similarMovies: PropTypes.arrayOf(PropTypes.string),
+  alternativeTitles: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default Others;
