@@ -1,18 +1,19 @@
 import "./Home.css";
-import Results from "./Results/Results";
 
 import React, { useState } from "react";
-import { usePopularMovies, useAdditionalMovieDetails } from "../../middlewares/customFetchingHooks";
+import { usePopularMovies } from "../../middlewares/customFetchingHooks";
+
 import Search from "./Search/Search";
+import Results from "./Results/Results";
+
 
 function Home() {
   const [useLanguage, setLanguage] = useState("en-US");
   const [useQuery, setQuery] = useState("year");
   const [useData, setData] = useState(1994);
-  const [useMovieId, setMovieId] = useState(315162);
 
   const moviesList = usePopularMovies(useLanguage, useQuery, useData);
-  const additionalDetails = useAdditionalMovieDetails(useMovieId);
+  let additionalDetails;
 
   function handleLanguage(language) {
     setLanguage(language);
@@ -28,10 +29,8 @@ function Home() {
     setData(data);
   }
 
-  function handleMoreDetails(movieId) {
-    console.log(movieId);
-    setMovieId(movieId);
-  }
+
+
 
   return (
     // Images / Logo
@@ -40,8 +39,6 @@ function Home() {
       <Results
         moviesList={moviesList}
         handleLanguage={handleLanguage}
-        handleMoreDetails={handleMoreDetails}
-        additionalDetails={additionalDetails}
       />
     </>
   );

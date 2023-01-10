@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Others({ additionalDetails }) {
+function Others({ handleMoreDetails, movieId, similarMovies, alternativeTitles }) {
   // const [additionalInfo, setAdditionalInfo] = useState();
 
   // getMoreDetails = () => {
@@ -12,8 +12,17 @@ function Others({ additionalDetails }) {
     return array === null || array === undefined || array.length > 0;
   };
 
-  const areMovies = isNullUndefinedOrEmpty(additionalDetails.similarMovies);
-  const areTitles = isNullUndefinedOrEmpty(additionalDetails.alternativeTitles);
+  const areMovies =
+    
+    isNullUndefinedOrEmpty(similarMovies);
+  const areTitles =
+    
+    isNullUndefinedOrEmpty(alternativeTitles);
+
+  const handleOnClick = () => {
+    handleMoreDetails(movieId);
+  };
+
 
   return (
     // Alternative titles
@@ -21,15 +30,16 @@ function Others({ additionalDetails }) {
     // Similar movies (titles)
     <div>
       <span>Films similaires : </span>
+      <button onClick={handleOnClick}>More</button>
       <details>
         <summary>
           {areMovies &&
-            additionalDetails.similarMovies.map((elem) => (
+            similarMovies.map((elem) => (
               <span key={elem}>{elem}</span>
             ))}
 
           {areTitles &&
-            additionalDetails.alternativeTitles.map((elem) => (
+            alternativeTitles.map((elem) => (
               <span key={elem}>{elem}</span>
             ))}
         </summary>
@@ -39,10 +49,10 @@ function Others({ additionalDetails }) {
 }
 
 Others.propTypes = {
-  additionalInfo: PropTypes.object,
   movieId: PropTypes.number,
   handleMoreDetails: PropTypes.func,
-  additionalDetails: PropTypes.object,
+  similarMovies: PropTypes.array,
+  alternativeTitles: PropTypes.array
 };
 
 export default Others;
