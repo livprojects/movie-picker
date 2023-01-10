@@ -1,10 +1,11 @@
-import "./home.css";
 
 import React, { useState } from "react";
 import { usePopularMovies } from "../../middlewares/customFetchingHooks";
 
 import Search from "./Search/Search";
 import Results from "./Results/Results";
+
+import "./home.css";
 
 function Home() {
   const [useLanguage, setLanguage] = useState("en-US");
