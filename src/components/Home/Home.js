@@ -4,7 +4,7 @@ import { usePopularMovies } from "../../middlewares/customFetchingHooks";
 import Search from "./Search/Search";
 import Results from "./Results/Results";
 
-import "./style.css";
+import './style.css';
 
 function Home() {
   const [useLanguage, setLanguage] = useState("en-US");

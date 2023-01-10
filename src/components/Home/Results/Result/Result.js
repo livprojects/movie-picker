@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Others from "./Others/Others";
 import axios from "axios";
-import "./result.css";
+import "./style.css";
 
 function Result({ basicData, languages }) {
   const [useSimilarMovies, setSimilarMovies] = useState([]);
