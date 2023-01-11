@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, waitFor, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Home from "./Home";
 
 import { rest } from "msw";
@@ -51,7 +51,6 @@ it("renders language selector", () => {
   );
 
   render(<Home />);
-  screen.debug();
 
   const navBarEnglish = screen.getByText("English");
   const navBarGerman = screen.getByText("Deutsch");

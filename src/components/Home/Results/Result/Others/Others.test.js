@@ -4,7 +4,6 @@ import Others from "./Others";
 
 it("renders button", () => {
   const { container } = render(<Others />);
-screen.debug();
   expect(container.firstChild).toHaveClass("others");
 });
 
