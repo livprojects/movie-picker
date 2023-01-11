@@ -1,32 +1,21 @@
 .others {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  align-items: flex-start;
 }
 
 .others-button {
-    width: 50%;
-    padding: 0.2rem;
-    margin: 1rem auto;
-    border: 0px;
+  width: 50%;
+  padding: 0.2rem;
+  margin: 1rem auto;
+  border: 0px;
 }
 
 .others-block {
-    margin: 1rem auto;
+  margin: 1rem auto;
 }
 
-#others-similar-movies::after {
-    content: '';
-    border-bottom: 4px solid grey;
-    display: block;
-    width: 50%;
-    margin-bottom: 0.5rem;
-}
-
-#others-alt-titles::after {
-    content: '';
-    border-bottom: 4px solid grey;
-    display: block;
-    width: 54%;
-    margin-bottom: 0.5rem;
+.others-details {
+  font-weight: 600;
 }
