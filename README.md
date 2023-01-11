@@ -1,95 +1,46 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-
----
 ### Présentation du projet 
+N'avez-vous déjà pas passé de longues minutes à vous demander que regarder ce soir, scrollé toutes les catégories de votre service de vidéo à la demande, avant de changer d'avis et d'aller faire autre chose ? Fini, avec Your Canal (Movie Picker) ! Ce petit outil donne des idées de films à regarder, en fonction du genre désiré, de l'année entrée ou de la langue d'origine. 
+Connecté à l'API [The Movie DB](https://developers.themoviedb.org/3), il fournit une liste des films les plus populaires selon le critère donné. Il est aussi possible de choisir la langue dans laquelle sont fournis les résultats. 
 
 ### Comment lancer le projet
+- En local : 
+1. cloner le repository avec la commande : 
+ `git clone <lien hTTPS ou SSH>` 
+2. Créer un fichier .env dans le projet avec deux variables
+`REACT_APP_API_BASE_URL`et `REACT_APP_API_ACCESS_KEY`
+Leurs valeurs correspondent respectivement au path de base de l'API The Movie DB et la clé d'accès fournis dans le document de présentation. (PS : Il ne faut pas encadrer les valeurs avec des double quotes)
+3. Installer les dépendances du projet avec la commande `npm install`
+4. Lancer le projet avec la commande `npm start`
 
-### Process
-- Versioning en branches + setup/feature/clean + n° de feature 
-- Push d'une branche + PR vers main
-- Blocage des PR où la branche n'est pas à jour par rapport à main 
-- Vérification des builds (d'abord sans tests puis avec) 
-- Commits + nom des composants en anglais 
+- Version déployée : 
+Se rendre sur : [https://your-movie-picker.netlify.app/](https://your-movie-picker.netlify.app/)
 
-### Outils en plus 
-- Eslint 
-- Prettier 
-- Create React App (dont Jest pour tests)
-- Axios
-- Github Action pour vérifier le build du projet quand la PR est mergée
+
+### Process utilisé
+- Projet versionné avec Github : trois types de branches, `setup/`, `clean/` et `feature/`, avec un numéro de feature pour chaque 
+- Branche protégée : `main` 
+- Processus de validation : je crée une nouvelle branche tirée de `main`, je fais un développement, je le track, je le commit avec une description en anglais, je push, je fais ensuite une pull request vers `main`
+- La pull request ne peut être validée que si : la branche tirée est à jour avec les modifications sur `main` (éventuellement rebase), la branche passe les pipelines de vérification de build et si la PR est approuvée. 
+- Pipelines de vérification : Github Action de vérification Node.js (build, ci et test) + Pipelines Netlify pour le déploiement 
+- Par souci de transparence, les commits n'ont pas été squashés aux merges et les branches mergées n'ont pas été supprimées, mais il est idéal de le faire pour ne pas surcharger le repository et par souci de clarté.
+
+### Stack technique 
+- React 18 (projet créé avec Create React App comme boilerplate)
+- Axios 
+- Eslint / Prettier pour vérifier les erreurs de syntaxe et faciliter l'indentation
+- React Testing Library pour tests 
+- Prop-types pour vérifier le type des objets manipulés (en l'absence de Typescript)
+- Github Actions pour vérifier le build du projet quand la PR est mergée
+
+
 ### Pourquoi ne pas avoir utilisé
-- Redux
-- Scss
-- Librairie de composants Front (ex: Tailwind)
+- Redux / Context API : j'ai longtemps hésité à mettre en place l'un des deux. Au vu de la petite taille du projet (deux "branches" partant du composant Home, et la majorité du projet sur une : Results -> Result -> Others), j'ai opté pour un customHook (système que je voulais tester) un passage de données de composant parent <-> enfant en "arbre". Toutefois, cela atteint très rapidement ses limites quand le projet et le nombre de composants sur des branches parallèles de l'arbre grossissent. 
+J'avais aussi peur que la syntaxe de Redux soit difficile à se ré-approprier en quelques heures. 
+- Librairie de composants Front (ex: Tailwind, Material UI) : aimant pratiquer le CSS, j'ai opté pour du "fait-maison". Toutefois, les librairies actuelles de composants offrent une solution de facilité et d'uniformité dans les pratiques au sein d'une équipe professionnelle. 
+
+### Ce que j'aurais aimé mettre en place 
+- Une fonction globale de traduction avec i18next. J'ai déjà utilisé cette librairie, je sais comment elle fonctionne mais elle peut rapidement alourdir la lisibilité du code si elle est mal implémentée. Dans le cadre d'un test, j'ai priorisé la lisibilité. 
+- Un système de pagination pour l'affichage des résultats 
+- Des tests plus robustes et plus poussés : je me suis cantonnée au rendu, j'aurais aimé plus de garde-fous au niveau des données manipulées. Un souci de configuration au niveau de Jest / React Testing Library m'a fait perdre pas mal de temps au début des tests
+- Un système de compte / session pour pouvoir échanger (de manière sécurisée pour l'utilisateur ou utilisatrice) avec l'API The Movie DB, qui fournit également des informations liées à un id de compte
