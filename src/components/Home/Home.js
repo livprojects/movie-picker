@@ -44,20 +44,22 @@ function Home() {
       <Search handleQuery={handleQuery} handleData={handleData} />
       <Results moviesList={moviesList} handleLanguage={handleLanguage} />
       <footer>
-        Crédits :{" "}
-        <a
-          href="https://icons8.com/icons/set/popcorn"
-          alt="Lien vers la source du favicon"
-        >
-          Favicon
-        </a>{" "}
-        -{" "}
-        <a
-          href="https://unsplash.com/fr/photos/J39X2xX_8CQ"
-          alt="Lien vers la source de l'image d'illustration"
-        >
-          Header
-        </a>
+        <div>
+          Crédits :{" "}
+          <a
+            href="https://icons8.com/icons/set/popcorn"
+            alt="Lien vers la source du favicon"
+          >
+            Favicon
+          </a>{" "}
+          -{" "}
+          <a
+            href="https://unsplash.com/fr/photos/J39X2xX_8CQ"
+            alt="Lien vers la source de l'image d'illustration"
+          >
+            Header
+          </a>
+        </div>
       </footer>
     </div>
   );

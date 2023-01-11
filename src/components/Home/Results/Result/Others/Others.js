@@ -29,16 +29,16 @@ function Others({
       <div className="others-block">
         {useToggle && (
           <div className="others-map-element">
-            <div id="others-alt-titles">Titres alternatifs : </div>
+            <div className="others-details">Titres alternatifs : </div>
             {areTitles &&
               alternativeTitles.map((elem, index) => {
-                return index >= alternativeTitles.length - 1 ? (
-                  <span key={elem}>{elem}</span>
-                ) : (
-                  <>
+                return index < alternativeTitles.length -1 ? (
+                  <span key={elem}>
                     <span key={elem}>{elem}</span>
                     <span> - </span>
-                  </>
+                  </span>
+                ) : (
+                  <span key={elem}>{elem} </span>
                 );
               })}
           </div>
@@ -47,16 +47,16 @@ function Others({
       <div className="others-block">
         {useToggle && (
           <div className="others-map-element">
-            <div id="others-similar-movies">Films similaires :</div>
+            <div className="others-details">Films similaires :</div>
             {areMovies &&
               similarMovies.map((elem, index) => {
-                return index >= alternativeTitles.length - 1 ? (
-                  <span key={elem}>{elem}</span>
-                ) : (
-                  <>
+                return index < similarMovies.length -1 ? (
+                  <span key={elem}>
                     <span key={elem}>{elem}</span>
                     <span> - </span>
-                  </>
+                  </span>
+                ) : (
+                  <span key={elem}>{elem} </span>
                 );
               })}
           </div>
