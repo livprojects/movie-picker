@@ -23,7 +23,7 @@ function Others({
 
   return (
     <div className="others">
-      <button className="others-button" onClick={handleOnClick}>
+      <button role="display-info" className="others-button" onClick={handleOnClick}>
         Plus de détails
       </button>
       <div className="others-block">
